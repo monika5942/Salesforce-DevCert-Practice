@@ -1,0 +1,17 @@
+public class AccountTriggerHandler {
+    public static void CreateAccounts(List<Account> acct){
+        //String bs = 'CA';
+        //List<Account> accListUpdated = new List<Account>();
+        //for(integer x=0; x<acct.size(); x++){
+        for(Account a: acct){
+            if(a.ShippingState != a.BillingState){
+                a.ShippingState = a.BillingState;
+                //accListUpdated.add(a);
+            }
+        }
+        
+        //if (accListUpdated.size() > 0) {
+        //        update accListUpdated;
+        //    } 
+    }
+}

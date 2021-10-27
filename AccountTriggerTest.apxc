@@ -1,0 +1,21 @@
+@isTest
+public class AccountTriggerTest {
+    @isTest static void CreateAccountsInBulk(){
+        List<Account> accountBulk = new list<Account>();
+        for(integer i =0; i<=200; i++){
+            Account actBulk = new Account();
+            actBulk.Name = 'Bulk Account Test ' + i;
+            actBulk.BillingState = 'CA';	
+            accountBulk.add(actBulk);
+        }
+        
+        Test.startTest();
+        insert accountBulk;
+        Test.stopTest();
+        
+        List<Account> verifyBulkAccts = [Select ShippingState from Account];
+            for(Account act: verifyBulkAccts){
+            	System.assertEquals('CA', act.ShippingState, 'Correct State Updated');
+            }       
+    }
+}
