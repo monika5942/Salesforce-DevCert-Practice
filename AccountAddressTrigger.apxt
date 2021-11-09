@@ -6,4 +6,4 @@ trigger AccountAddressTrigger on Account (before insert, before update) {
                 System.debug('Shipping Code is updated');
             } 
         }
-	}
+}
